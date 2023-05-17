@@ -54,7 +54,7 @@ if [[ "$1" == "kong" ]]; then
     if [ -n "$WALLARM_API_HOST" ]; then
       args="$args -H $WALLARM_API_HOST"
     fi
-    if [ -n "$WALLARM_LABELS"]; then
+    if [ -n "$WALLARM_LABELS" ]; then
       args="$args --labels $WALLARM_LABELS"
     fi
     if [ -n "$TARANTOOL_MEMORY_GB" ]; then
