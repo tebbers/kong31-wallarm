@@ -14,7 +14,7 @@ docker run -it --rm --name kong \
     -e 'KONG_DECLARATIVE_CONFIG_STRING={"_format_version":"1.1", "services":[{"host":"mockbin.com","port":443,"protocol":"https", "routes":[{"paths":["/"]}]}]}' \
     -e 'WALLARM_API_HOST=api.wallarm.com' \
     -e 'WALLARM_API_TOKEN=<put your token here>' \
-    -e 'WALLARM_LABEL=group=<put your group here>' \
+    -e 'WALLARM_LABELS=group=<put your group here>' \
     -e 'TARANTOOL_MEMORY_GB=1' \
     -e 'WALLARM_MODE=block' \
     -p 8000:8000 \
