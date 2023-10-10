@@ -45,6 +45,9 @@ if [[ "$1" == "kong" ]]; then
     if [ -n "$WALLARM_MODE" ]; then
       sed -i -e "s|wallarm_mode monitoring|wallarm_mode $WALLARM_MODE|g" /usr/local/share/lua/5.1/kong/templates/nginx_kong.lua
     fi
+    if [ -n "$WALLARM_APPLICATION" ]; then
+      sed -i -e "s|wallarm_application -1|wallarm_application $WALLARM_APPLICATION|g" /usr/local/share/lua/5.1/kong/templates/nginx_kong.lua
+    fi
     kong prepare -p "$PREFIX" "$@"
 
     ln -sf /dev/stdout $PREFIX/logs/access.log
