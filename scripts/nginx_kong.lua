@@ -78,6 +78,7 @@ server {
     listen $(entry.listener);
 > end
     wallarm_mode monitoring;
+    wallarm_application -1;
     disable_acl "off";
 
     error_page 400 404 405 408 411 412 413 414 417 494 /kong_error_handler;
