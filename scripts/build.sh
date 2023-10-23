@@ -3,6 +3,7 @@
 set -ex
 
 /build/busybox wget https://meganode.wallarm.com/4.6/wallarm-4.6.0.x86_64-glibc.tar.gz -O - | tar -xzv -C /
+/build/busybox wget https://meganode.wallarm.com/4.8/wallarm-4.8.0.x86_64-glibc.tar.gz -O - | tar -xzv -C /
 chown -R kong:kong /opt/wallarm
 
 cp -v /build/docker-entrypoint.sh /docker-entrypoint.sh
